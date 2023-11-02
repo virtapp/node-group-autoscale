@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "registry.hub.docker.com/virtapp/apache-default"
+    registry = "registry.hub.docker.com/finonex/node-group-autoscale"
     registryCredential = 'docker-hub-credentials'
     dockerImage = ''
   }
@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/virtapp/apache-default.git'
+        git 'https://github.com/virtapp/node-group-autoscale.git'
       }
     }
     stage('Building image') {
