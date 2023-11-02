@@ -1,3 +1,4 @@
+
 pipeline {
   environment {
     registry = "registry.hub.docker.com/finonex/node-group-autoscale"
@@ -34,3 +35,4 @@ pipeline {
     }
   }
 }
+
