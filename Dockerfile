@@ -9,6 +9,10 @@ RUN apt-get update && \
 RUN add-apt-repository ppa:ondrej/php -y
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     apache2 php7.0 php7.0-mysql libapache2-mod-php7.0 curl mysql-client git nano 
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin
+
 RUN apt-get -y install  \
     openid-connect-provider libapache2-mod-auth-openidc
 
