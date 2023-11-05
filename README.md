@@ -1,3 +1,4 @@
+
 # Apache Web Server 
 wordpress-apache-configuration
 This image is based on wordpress official image with minor changes
