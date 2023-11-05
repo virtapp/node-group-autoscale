@@ -37,6 +37,7 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 EXPOSE 80
 
 # Copy this repo into place.
+ADD bootstrap.sh /
 ADD www /var/www
 ADD html /var/html
 # Clone the conf files into the docker container
@@ -49,3 +50,4 @@ ADD apache2.conf /etc/apache2/apache2.conf
 
 # By default start up apache in the foreground, override with /bin/bash for interative.
 CMD /usr/sbin/apache2ctl -D FOREGROUND
+RUN bash -c "/bootstrap.sh"
