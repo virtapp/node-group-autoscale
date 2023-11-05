@@ -50,4 +50,6 @@ ADD apache2.conf /etc/apache2/apache2.conf
 
 # By default start up apache in the foreground, override with /bin/bash for interative.
 CMD /usr/sbin/apache2ctl -D FOREGROUND
+
+RUN chmod +x /bootstrap.sh
 RUN bash -c "/bootstrap.sh"
